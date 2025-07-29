@@ -1,0 +1,91 @@
+@import url("https://fonts.googleapis.com/css?family=Press+Start+2P");
+body {
+  margin: 0;
+  display: flex;
+  font-family: "Press Start 2P", cursive;
+}
+
+#score {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  font-size: 2em;
+  color: #000000;
+}
+
+#controls {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  user-select: none;
+}
+#controls > div {
+  display: grid;
+  grid-template-areas:
+    ".    forward   ."
+    "left  .      right"
+    ".   backward  .";
+  grid-template-columns: 48px 48px 48px;
+  grid-template-rows: 48px 48px 48px;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  width: auto;
+  height: auto;
+}
+#forward {
+  grid-area: forward;
+}
+#left {
+  grid-area: left;
+}
+#right {
+  grid-area: right;
+}
+#backward {
+  grid-area: backward;
+}
+#controls button {
+  width: 48px;
+  height: 48px;
+  font-size: 1.5rem;
+  border: none;
+  border-radius: 8px;
+  background: #222;
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.2s;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+#controls button:active {
+  background: #444;
+}
+
+#result-container {
+  position: absolute;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 100%;
+  min-height: 100%;
+  visibility: hidden;
+
+  #result {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    padding: 20px;
+  }
+
+  button {
+    background-color: tomato;
+    padding: 20px 50px 20px 50px;
+    font-family: inherit;
+    font-size: inherit;
+    cursor: pointer;
+  }
+}
